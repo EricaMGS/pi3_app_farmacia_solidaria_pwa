@@ -1,0 +1,50 @@
+ID_Med,Desc_Med,Dosagem,Qtd_Est,Fabricante,Uso_Controlado,Posic_Estq
+1,Paracetamol,500mg,100,Farmax,FALSE,Prateleira A
+2,Dipirona,300mg,50,Medley,FALSE,Prateleira B
+3,Omeprazol,20mg,80,EMS,FALSE,Prateleira C
+4,Amoxicilina,500mg,60,Eurofarma,FALSE,Prateleira D
+5,Dexametasona,4mg,30,Biolab,TRUE,Prateleira E
+6,Rivotril,2mg,20,Roche,TRUE,Prateleira F
+7,Losartana,50mg,40,Aché,FALSE,Prateleira G
+8,Cloridrato de Sertralina,50mg,70,Teuto,TRUE,Prateleira H
+9,Atenolol,25mg,90,Sandoz,FALSE,Prateleira I
+10,Sinvastatina,20mg,110,Biosintética,FALSE,Prateleira J
+11,Captopril,25mg,35,Cristália,FALSE,Prateleira K
+12,Levotiroxina,100mcg,25,Legrand,FALSE,Prateleira L
+13,Ibuprofeno,400mg,45,Neo Química,FALSE,Prateleira M
+14,Cefalexina,500mg,55,Germed,FALSE,Prateleira N
+15,Loratadina,10mg,75,Torrent,FALSE,Prateleira O
+16,Metformina,850mg,65,Biolab,FALSE,Prateleira P
+17,Sinvastatina,40mg,85,Biosintética,FALSE,Prateleira Q
+18,Ondansetrona,8mg,40,EMS,FALSE,Prateleira R
+19,Ciprofloxacino,500mg,30,Teuto,FALSE,Prateleira S
+20,Pantoprazol,40mg,25,Eurofarma,FALSE,Prateleira T
+21,Diclofenaco,50mg,60,Sanofi,FALSE,Prateleira U
+22,Fluoxetina,20mg,70,Medley,TRUE,Prateleira V
+23,Paroxetina,20mg,80,Cristália,TRUE,Prateleira W
+24,Hidroclorotiazida,25mg,55,EMS,FALSE,Prateleira X
+25,Sinvastatina,10mg,30,Biosintética,FALSE,Prateleira Y
+26,Amitriptilina,25mg,40,Legrand,TRUE,Prateleira Z
+27,Metronidazol,400mg,45,Germed,FALSE,Prateleira AA
+28,Ciclobenzaprina,10mg,20,Aché,FALSE,Prateleira AB
+29,Tramadol,50mg,35,EMS,TRUE,Prateleira AC
+30,Sertralina,50mg,60,Medley,TRUE,Prateleira AD
+31,Paracetamol,750mg,50,Genérico,FALSE,Prateleira AE
+32,Dipirona,500mg,40,Neo Química,FALSE,Prateleira AF
+33,Omeprazol,40mg,70,EMS,FALSE,Prateleira AG
+34,Amoxicilina,250mg,90,Medley,FALSE,Prateleira AH
+35,Dexametasona,8mg,30,Teuto,TRUE,Prateleira AI
+36,Rivotril,1mg,25,Cristália,TRUE,Prateleira AJ
+37,Losartana,100mg,35,Aché,FALSE,Prateleira AK
+38,Cloridrato de Sertralina,100mg,40,Genérico,TRUE,Prateleira AL
+39,Atenolol,50mg,55,Medley,FALSE,Prateleira AM
+40,Sinvastatina,80mg,25,Biolab,FALSE,Prateleira AN
+41,Captopril,50mg,40,Legrand,FALSE,Prateleira AO
+42,Levotiroxina,50mcg,65,Cristália,FALSE,Prateleira AP
+43,Ibuprofeno,600mg,30,Neo Química,FALSE,Prateleira AQ
+44,Cefalexina,250mg,45,Genérico,FALSE,Prateleira AR
+45,Loratadina,5mg,80,EMS,FALSE,Prateleira AS
+46,Metformina,500mg,70,Medley,FALSE,Prateleira AT
+47,Sinvastatina,60mg,35,Biolab,FALSE,Prateleira AU
+48,Ondansetrona,4mg,40,Eurofarma,FALSE,Prateleira AV
+49,Ciprofloxacino,250mg,25,Teuto,FALSE,Prateleira AW
