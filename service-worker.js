@@ -1,37 +1,43 @@
 const CACHE_NAME = 'farmacia-solidaria-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/api_recall.html',
-  '/api_tylenol.html',
-  '/dados.html',
-  '/app_recall.js',
-  '/app_tylenol.js',
-  '/Imagens/medicamento.png',
-  '/Imagens/caixamedicamentos.png',
-  'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'
+    '/',
+    '/index.html',
+    '/api_recall.html',
+    '/api_tylenol.html',
+    '/dados.html',
+    '/app_recall.js',
+    '/app_tylenol.js',
+    '/Imagens/medicamento.png',
+    '/Imagens/caixamedicamentos.png',
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'
 ];
 
 // Instalação do Service Worker
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Cache aberto');
-        return cache.addAll(urlsToCache);
-      })
-  );
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(cache => {
+                console.log('Cache aberto');
+                return cache.addAll(urlsToCache);
+            })
+    );
 });
 
 // Fetch (Interceptação de Requisições)
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-  );
+    if (event.request.method === 'POST') {
+        // Sempre tente buscar na rede para POST (cadastro)
+        event.respondWith(fetch(event.request));
+    } else {
+        // Para GET requests, tente do cache primeiro
+        event.respondWith(
+            caches.match(event.request)
+                .then(response => {
+                    if (response) {
+                        return response;
+                    }
+                    return fetch(event.request);
+                })
+        );
+    }
 });

@@ -1,0 +1,27 @@
+{
+  "name": "pi3_app_farmacia_solidaria_pwa",
+  "version": "1.0.0",
+  "main": "app_recall.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricaMGS/pi3_app_farmacia_solidaria_pwa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricaMGS/pi3_app_farmacia_solidaria_pwa/issues"
+  },
+  "homepage": "https://github.com/EricaMGS/pi3_app_farmacia_solidaria_pwa#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "csv-stringify": "^6.5.2",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  },
+  "description": ""
+}
