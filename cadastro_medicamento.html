@@ -27,19 +27,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Nosso
-                            Aplicativo</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">Farmácia Solidária</a>
+                        <a class="nav-link" href="api_recall.html" target="_blank">Consulta Recall Ibuprofeno</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="api_recall.html" target="_blank">Consulta Recall
-                            Ibuprofeno</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="api_tylenol.html" target="_blank">Consulta Info
-                            Tylenol</a>
+                        <a class="nav-link" href="api_tylenol.html" target="_blank">Consulta Info Tylenol</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="dados.html" target="_blank">Visualizador Dados (csv)
@@ -97,8 +91,6 @@
                 <a href="https://www.flaticon.com/br/icone-gratis/medicamento_10615414?term=medicamentos+reuso&page=1&position=2&origin=search&related_id=10615414"
                     title="medicamento" target="_blank">Flaticon - imagem 1</a>
             </p>
-            <a href="https://www.flaticon.com/br/icone-gratis/caixa-de-remedios_18075156?term=caixa+medicamentos&page=1&position=55&origin=search&related_id=18075156"
-                title="caixa com medicamento" target="_blank">Flaticon - imagem 2</a>
         </div>
     </footer>
     <script>
@@ -123,7 +115,7 @@
                     if (result.success) {
                         alert('Medicamento cadastrado com sucesso!');
                         document.getElementById('cadastroForm').reset();
-                        window.location.href = 'index.html';
+                        window.location.href = 'cadastro_medicamento.html';
                     } else {
                         console.error('Erro ao cadastrar:', result.message);
                         alert('Erro ao cadastrar medicamento: ' + result.message);

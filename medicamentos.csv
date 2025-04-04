@@ -2,3 +2,5 @@ ID_Med,Desc_Med,Dosagem,Qtd_Est,Fabricante,Uso_Controlado,Posic_Estq
 
 1,Paracetamol,500mg,100,Farmax,FALSE,Prateleira A
 2,Dipirona,300mg,50,Medley,FALSE,Prateleira B
+3,Omeprazol,20mg,80,EMS,FALSE,Prateleira C
+

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitor de Recall de Ibuprofeno</title>
     <link rel="shortcut icon" href="Imagens/medicamento.png">
-    <link rel="manifest" href="manifest.json">  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link rel="manifest" href="manifest.json">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
@@ -14,7 +15,8 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="Imagens/medicamento.png" alt="medicamento" width="30" height="24" class="d-inline-block align-top img-fluid">
+                <img src="Imagens/medicamento.png" alt="medicamento" width="30" height="24"
+                    class="d-inline-block align-top img-fluid">
                 Farmácia Solidária
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -25,10 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Nosso Aplicativo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="sobre.html">Farmácia Solidária</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Início</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="cadastro_medicamento.html">Cadastro Medicamento</a>
@@ -68,7 +67,8 @@
             <p style="color:green; text-align:center;">© 2025</p>
             <hr>
             <p style="text-align:center;">Fontes imagens:
-                <a href="https://www.flaticon.com/br/icone-gratis/medicamento_10615414?term=medicamentos+reuso&page=1&position=2&origin=search&related_id=10615414" title="medicamento" target="_blank">Flaticon - imagem 1</a>
+                <a href="https://www.flaticon.com/br/icone-gratis/medicamento_10615414?term=medicamentos+reuso&page=1&position=2&origin=search&related_id=10615414"
+                    title="medicamento" target="_blank">Flaticon - imagem 1</a>
             </p>
         </div>
     </footer>
@@ -78,17 +78,17 @@
         crossorigin="anonymous"></script>
     <script src="app_recall.js"></script>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => {
-              console.log('Service Worker registrado com sucesso:', registration);
-            })
-            .catch(error => {
-              console.log('Erro ao registrar o Service Worker:', error);
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registrado com sucesso:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Erro ao registrar o Service Worker:', error);
+                    });
             });
-        });
-      }
+        }
     </script>
 </body>
 
