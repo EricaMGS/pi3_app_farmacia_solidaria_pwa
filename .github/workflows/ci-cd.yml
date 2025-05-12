@@ -1,1 +1,94 @@
+# Nome do Workflow (aparecerá na aba "Actions" do GitHub)
+name: CI/CD PWA Farmácia Solidária
 
+# Eventos que disparam o workflow
+on:
+  # Executa quando código é enviado (push) para a branch 'main'
+  push:
+    branches: [ main ]
+  # Executa também em Pull Requests direcionados à branch 'main'
+  pull_request:
+    branches: [ main ]
+
+  # Permite disparar manualmente pela interface do GitHub Actions
+  workflow_dispatch:
+
+# Define os trabalhos (jobs) a serem executados
+jobs:
+  # Job único para construir e, se for push na main, fazer deploy no GitHub Pages
+  build_and_deploy:
+    name: Build e Deploy
+    # Usa a versão mais recente do Ubuntu como ambiente
+    runs-on: ubuntu-latest
+
+    # Permissões necessárias para fazer deploy no GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    # Define o ambiente de deploy (para GitHub Pages)
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # URL onde o site será publicado
+
+    # Passos executados dentro do job
+    steps:
+      # 1. Baixa o código do seu repositório para o ambiente do runner
+      - name: Checkout do código
+        uses: actions/checkout@v4 # Action oficial para checkout
+
+      # 2. Configura a versão desejada do Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # <-- IMPORTANTE: Verifique se esta é a versão correta para seu projeto
+          cache: 'npm' # <-- Opcional: Habilita cache para 'npm ci' ser mais rápido
+
+      # 3. Instala as dependências do projeto
+      # Usa 'npm ci' que é recomendado para CI por ser mais rápido e determinístico
+      - name: Instalar dependências
+        run: npm ci
+
+      # 4. Executar Testes (ATENÇÃO!)
+      # Seu script "test" atual só imprime um erro.
+      # Se você implementar testes, este passo os executará.
+      # Se não tiver testes, PODE REMOVER este passo ou deixar como está (ele vai "passar" mas imprimir o erro).
+      - name: Rodar Testes
+        run: npm test
+
+      # 5. Gerar o Build do PWA (ATENÇÃO!)
+      # Seu package.json NÃO TEM um script "build".
+      # Você PRECISA adicionar um script "build" ao seu package.json.
+      # Este script deve gerar os arquivos estáticos finais do seu PWA (HTML, CSS, JS otimizados, manifest, service worker)
+      # em uma pasta específica (ex: 'build', 'dist', 'public').
+      # Exemplo de como adicionar no package.json:
+      # "scripts": {
+      #   ...
+      #   "build": "comando_real_de_build_do_seu_pwa"
+      #   ...
+      # },
+      - name: Gerar build de produção do PWA
+        run: npm run build # <-- ESTE SCRIPT PRECISA EXISTIR NO SEU package.json
+
+      # 6. Preparar para Deploy no GitHub Pages
+      - name: Configurar GitHub Pages
+        # Só executa se for um push na branch main (não em PRs)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+
+      # 7. Empacotar artefato para GitHub Pages
+      - name: Upload do artefato para deploy
+        # Só executa se for um push na branch main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # IMPORTANTE: Altere './build' para o nome da pasta que seu script 'npm run build' gera!
+          path: './build' # <-- AJUSTE O CAMINHO DA PASTA DE BUILD
+
+      # 8. Fazer Deploy no GitHub Pages
+      - name: Deploy no GitHub Pages
+        # Só executa se for um push na branch main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        id: deployment
+        uses: actions/deploy-pages@v4 # Action oficial para deploy no Pages
